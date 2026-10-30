@@ -45,10 +45,10 @@ export function Hero() {
         alt=""
         aria-hidden
         style={{ y: garlandY }}
-        className="pointer-events-none absolute -top-6 sm:-top-8 left-1/2 w-[118%] sm:w-[110%] max-w-none -translate-x-1/2 opacity-95 drop-shadow-md z-10"
+        className="pointer-events-none absolute -top-4 sm:-top-6 left-1/2 w-[116%] sm:w-[108%] max-w-none -translate-x-1/2 opacity-95 drop-shadow-md z-10"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col items-center px-4 pt-32 text-center sm:pt-36">
+      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col items-center px-4 pt-28 text-center sm:pt-32">
         <motion.div
           style={{ y: textY, opacity: textOpacity }}
           className="flex flex-col items-center"
