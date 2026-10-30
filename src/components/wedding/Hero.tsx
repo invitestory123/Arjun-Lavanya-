@@ -14,7 +14,6 @@ export function Hero() {
   const smooth = useSpring(scrollYProgress, { stiffness: 100, damping: 24, mass: 0.4 });
 
   const glowY = useTransform(smooth, [0, 1], ["0%", "22%"]);
-  const garlandY = useTransform(smooth, [0, 1], ["0%", "30%"]);
   const textY = useTransform(smooth, [0, 1], ["0%", "45%"]);
   const textOpacity = useTransform(smooth, [0, 0.65], [1, 0]);
   const coupleY = useTransform(smooth, [0, 1], ["0%", "-8%"]);
@@ -39,16 +38,7 @@ export function Hero() {
 
       <Petals count={12} />
 
-      {/* Top Festoon Garland (Clean without hanging strands) */}
-      <motion.img
-        src="/images/garland.png"
-        alt=""
-        aria-hidden
-        style={{ y: garlandY }}
-        className="pointer-events-none absolute -top-1 left-1/2 w-[130%] max-w-none -translate-x-1/2 opacity-95 drop-shadow-md"
-      />
-
-      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col items-center px-4 pt-24 text-center sm:pt-28">
+      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col items-center px-4 pt-16 text-center sm:pt-20">
         <motion.div
           style={{ y: textY, opacity: textOpacity }}
           className="flex flex-col items-center"

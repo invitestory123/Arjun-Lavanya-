@@ -92,6 +92,18 @@ export function EventDetails() {
                     <p className="text-muted-foreground mt-1 text-xs leading-relaxed max-w-xs">
                       {evt.venue.address}
                     </p>
+
+                    {evt.venue.mapUrl && (
+                      <a
+                        href={evt.venue.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group mt-4 inline-flex items-center gap-2 rounded-full border border-gold/45 bg-gradient-to-r from-gold/15 via-gold/10 to-gold/15 px-5 py-2 text-[0.68rem] tracking-[0.25em] uppercase font-medium text-primary shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-gold hover:from-gold/25 hover:to-gold/25 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                      >
+                        <MapPin className="h-3.5 w-3.5 text-gold transition-transform duration-300 group-hover:-translate-y-0.5" />
+                        <span>View on Google Maps</span>
+                      </a>
+                    )}
                   </div>
                 </div>
 

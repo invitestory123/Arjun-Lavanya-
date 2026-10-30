@@ -12,7 +12,7 @@ import { MusicPlayer } from "@/components/wedding/MusicPlayer";
 import { wedding } from "@/components/wedding/data";
 
 const title = `${wedding.groom.name} & ${wedding.bride.name} · 13 November 2026`;
-const description = `Together with their families, ${wedding.groom.name} and ${wedding.bride.name} invite you to celebrate their wedding on 13 November 2026 at ${wedding.venue.name}, ${wedding.venue.address}.`;
+const description = `Together with their families, ${wedding.groom.name} & ${wedding.bride.name} invite you to celebrate their wedding on 13 November 2026 at ${wedding.venue.name}, ${wedding.venue.address}.`;
 
 export const Route = createFileRoute("/")({
   head: () => ({

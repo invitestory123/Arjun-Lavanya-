@@ -32,6 +32,7 @@ export const wedding = {
   venue: {
     name: "Shri Laxmi Ranganatha Kalyana Mantapa",
     address: "Devadurga Tq, Raichur Dist, Karnataka",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Shri+Laxmi+Ranganatha+Kalyana+Mantapa,+Devadurga,+Raichur",
   },
 
   events: [
@@ -50,6 +51,7 @@ export const wedding = {
       venue: {
         name: "Shri Laxmi Ranganatha Kalyana Mantapa",
         address: "Devadurga Tq, Raichur Dist, Karnataka",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=Shri+Laxmi+Ranganatha+Kalyana+Mantapa,+Devadurga,+Raichur",
       },
     },
     {
@@ -67,6 +69,7 @@ export const wedding = {
       venue: {
         name: "Ambedkar Kalyana Mantapa",
         address: "Raichur Dist, Karnataka",
+        mapUrl: "https://maps.app.goo.gl/swCHGrYBRJGdmegv7?g_st=aw",
       },
     },
   ],
