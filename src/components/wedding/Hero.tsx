@@ -14,19 +14,19 @@ export function Hero() {
   const smooth = useSpring(scrollYProgress, { stiffness: 100, damping: 24, mass: 0.4 });
 
   const glowY = useTransform(smooth, [0, 1], ["0%", "22%"]);
-  const garlandY = useTransform(smooth, [0, 1], ["0%", "38%"]);
-  const textY = useTransform(smooth, [0, 1], ["0%", "50%"]);
-  const textOpacity = useTransform(smooth, [0, 0.6], [1, 0]);
-  const coupleY = useTransform(smooth, [0, 1], ["0%", "-10%"]);
-  const coupleScale = useTransform(smooth, [0, 1], [1, 1.05]);
+  const garlandY = useTransform(smooth, [0, 1], ["0%", "30%"]);
+  const textY = useTransform(smooth, [0, 1], ["0%", "45%"]);
+  const textOpacity = useTransform(smooth, [0, 0.65], [1, 0]);
+  const coupleY = useTransform(smooth, [0, 1], ["0%", "-8%"]);
+  const coupleScale = useTransform(smooth, [0, 1], [1, 1.04]);
 
   return (
     <section
       ref={ref}
-      className="bg-emerald-deep relative flex min-h-[100svh] w-full flex-col items-center justify-between overflow-hidden pb-12"
+      className="bg-emerald-deep relative flex min-h-[100svh] w-full flex-col items-center justify-between overflow-hidden pb-10"
     >
       <Aurora intensity={1} />
-      <div className="from-emerald-ink/50 via-emerald-deep/20 to-emerald-ink/90 absolute inset-0 bg-gradient-to-b" />
+      <div className="from-emerald-ink/55 via-emerald-deep/20 to-emerald-ink/90 absolute inset-0 bg-gradient-to-b" />
       <motion.div
         aria-hidden
         style={{
@@ -39,15 +39,16 @@ export function Hero() {
 
       <Petals count={12} />
 
+      {/* Top Festoon Garland (Clean without hanging strands) */}
       <motion.img
         src="/images/garland.png"
         alt=""
         aria-hidden
         style={{ y: garlandY }}
-        className="pointer-events-none absolute -top-2 left-1/2 w-[135%] max-w-none -translate-x-1/2 opacity-90"
+        className="pointer-events-none absolute -top-1 left-1/2 w-[130%] max-w-none -translate-x-1/2 opacity-95 drop-shadow-md"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col items-center px-6 pt-28 text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col items-center px-4 pt-24 text-center sm:pt-28">
         <motion.div
           style={{ y: textY, opacity: textOpacity }}
           className="flex flex-col items-center"
@@ -56,22 +57,23 @@ export function Hero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.9 }}
-            className="text-gold-soft/90 text-[0.6rem] tracking-[0.5em] uppercase"
+            className="text-gold-soft/90 text-[0.62rem] tracking-[0.45em] uppercase font-medium"
           >
             Together with their families
           </motion.p>
 
+          {/* Names with Font Correction & & */}
           <motion.h1
-            initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+            initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ delay: 0.4, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 flex flex-col items-center leading-[0.82]"
+            transition={{ delay: 0.35, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-4 flex flex-col items-center leading-[0.88]"
           >
-            <span className="text-gold-foil font-display text-[4.25rem] font-light">
+            <span className="text-gold-foil font-display text-[4rem] sm:text-[4.5rem] font-medium tracking-wide drop-shadow-[0_2px_14px_rgba(212,175,55,0.3)]">
               {wedding.groom.name}
             </span>
-            <span className="font-script text-gold/80 my-1 text-3xl">and</span>
-            <span className="text-gold-foil font-display text-[4.25rem] font-light">
+            <span className="font-script text-gold/90 my-1 text-3xl sm:text-4xl">&amp;</span>
+            <span className="text-gold-foil font-display text-[4rem] sm:text-[4.5rem] font-medium tracking-wide drop-shadow-[0_2px_14px_rgba(212,175,55,0.3)]">
               {wedding.bride.name}
             </span>
           </motion.h1>
@@ -79,51 +81,50 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ delay: 1, duration: 0.9 }}
-            className="rule-gold mt-7 w-40"
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="rule-gold mt-6 w-36"
           />
 
           <motion.p
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.15, duration: 0.9 }}
-            className="text-ivory/85 mt-5 text-sm tracking-[0.35em] uppercase"
+            transition={{ delay: 1.05, duration: 0.8 }}
+            className="text-ivory/90 mt-4 text-sm tracking-[0.35em] uppercase font-medium"
           >
             13 · 11 · 2026
           </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.35, duration: 0.9 }}
-            className="text-ivory/60 mt-2 text-[0.7rem] tracking-[0.25em] uppercase"
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="text-ivory/60 mt-1.5 text-[0.7rem] tracking-[0.25em] uppercase"
           >
             Devadurga · Raichur
           </motion.p>
         </motion.div>
 
+        {/* Cover Photo: Full View with NO Border */}
         <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.96 }}
+          initial={{ opacity: 0, y: 35, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.7, duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 0.65, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           style={{ y: coupleY, scale: coupleScale }}
-          className="relative mt-8 mb-6 w-[92%] max-w-[360px] overflow-hidden rounded-[2.5rem] border-2 border-gold/40 shadow-2xl drop-shadow-[0_24px_40px_rgba(0,0,0,0.45)] ring-1 ring-gold/20"
+          className="relative mt-8 mb-4 w-full max-w-[430px] overflow-hidden rounded-3xl shadow-2xl drop-shadow-[0_20px_45px_rgba(0,0,0,0.5)]"
         >
           <img
             src={wedding.coverImage}
             alt={`${wedding.groom.name} & ${wedding.bride.name}`}
             width={1024}
             height={682}
-            className="h-auto w-full object-cover brightness-105"
+            className="h-auto w-full object-cover"
           />
-          <div className="pointer-events-none absolute inset-0 rounded-[2.5rem] ring-1 ring-inset ring-gold/30" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-emerald-ink/60 to-transparent" />
         </motion.div>
       </div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
+        transition={{ delay: 1.6 }}
         style={{ opacity: textOpacity }}
         className="text-gold/70 relative z-20 flex flex-col items-center"
       >

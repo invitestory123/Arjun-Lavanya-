@@ -2,14 +2,20 @@ export const wedding = {
   groom: {
     name: "Arjun",
     fullName: "Arjun",
-    line: "The Groom",
+    qualification: "MBA",
+    relation: "Elder Son of",
+    parents: "Amruthadevi & Sabanna Angadi",
+    line: "Elder Son of Amruthadevi & Sabanna Angadi",
     note: "Stepping into this new chapter with boundless joy, gratitude, and a promise of forever.",
     image: "/images/groom-entry.jpg",
   },
   bride: {
     name: "Lavanya",
     fullName: "Lavanya",
-    line: "The Bride",
+    qualification: "BE (EEE)",
+    relation: "Second Daughter of",
+    parents: "Renuka & Gangappa Chinmai",
+    line: "Second Daughter of Renuka & Gangappa Chinmai",
     note: "Walking hand in hand toward a future filled with laughter, cherished dreams, and unconditional love.",
     image: "/images/bride-entry.jpg",
   },
@@ -17,7 +23,7 @@ export const wedding = {
   endImage: "/images/end-photo.jpg",
   audioSrc: "/audio/song.mp3",
 
-  // Primary wedding date (13 November 2026) for hero & countdown
+  // Primary wedding date (13 November 2026) for countdown
   dateISO: "2026-11-13T10:00:00+05:30",
   endISO: "2026-11-13T14:00:00+05:30",
   dateLabel: "Friday, 13 November 2026",
@@ -26,15 +32,14 @@ export const wedding = {
   venue: {
     name: "Shri Laxmi Ranganatha Kalyana Mantapa",
     address: "Devadurga Tq, Raichur Dist, Karnataka",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=Shri+Laxmi+Ranganatha+kalyana+mantapa+devadurga+Raichur",
   },
 
   events: [
     {
       id: "marriage",
       title: "Marriage Ceremony",
-      subtitle: "The Auspicious Muhurtham & Sacred Vows",
+      kannadaTitle: "ವಿವಾಹ ಮಹೋತ್ಸವ",
+      subtitle: "The Sacred Muhurtham & Vows",
       day: "13",
       monthYear: "November 2026",
       dateLabel: "Friday, 13 November 2026",
@@ -45,26 +50,23 @@ export const wedding = {
       venue: {
         name: "Shri Laxmi Ranganatha Kalyana Mantapa",
         address: "Devadurga Tq, Raichur Dist, Karnataka",
-        mapUrl:
-          "https://www.google.com/maps/search/?api=1&query=Shri+Laxmi+Ranganatha+kalyana+mantapa+devadurga+Raichur",
       },
     },
     {
       id: "reception",
-      title: "Wedding Reception",
-      subtitle: "Dinner, Music & Celebrations",
+      title: "Reception",
+      kannadaTitle: "ಸ್ವಾಗತ ಸಮಾರಂಭ",
+      subtitle: "Celebrations & Blessings",
       day: "16",
       monthYear: "November 2026",
       dateLabel: "Monday, 16 November 2026",
-      timeLabel: "6:30 PM onwards",
-      muhurthamLabel: "Reception & Dinner",
-      dateISO: "2026-11-16T18:30:00+05:30",
-      endISO: "2026-11-16T22:30:00+05:30",
+      timeLabel: "12:00 PM onwards",
+      muhurthamLabel: "Reception",
+      dateISO: "2026-11-16T12:00:00+05:30",
+      endISO: "2026-11-16T16:00:00+05:30",
       venue: {
         name: "Ambedkar Kalyana Mantapa",
         address: "Raichur Dist, Karnataka",
-        mapUrl:
-          "https://www.google.com/maps/search/?api=1&query=Ambedkar+kalyana+mantapa+Raichur",
       },
     },
   ],
