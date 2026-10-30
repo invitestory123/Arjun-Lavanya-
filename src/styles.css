@@ -103,7 +103,7 @@
   }
 
   body {
-    background-color: var(--color-background);
+    background-color: var(--color-emerald-deep);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;

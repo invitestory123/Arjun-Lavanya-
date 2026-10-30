@@ -40,6 +40,7 @@ export const Route = createFileRoute("/")({
 
 function Invitation() {
   const [opened, setOpened] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = opened ? "" : "hidden";
@@ -48,27 +49,36 @@ function Invitation() {
     };
   }, [opened]);
 
+  const handleStartOpen = () => {
+    setHasStarted(true);
+  };
+
+  const handleFinishOpen = () => {
+    setOpened(true);
+  };
+
   return (
-    <>
+    <div className="bg-emerald-deep min-h-screen w-full">
       <AnimatePresence>
-        {!opened && <Opener key="opener" onOpen={() => setOpened(true)} />}
+        {!opened && (
+          <Opener
+            key="opener"
+            onOpenStart={handleStartOpen}
+            onOpen={handleFinishOpen}
+          />
+        )}
       </AnimatePresence>
 
+      <MusicPlayer isOpened={hasStarted} />
       {opened && <ScrollProgress />}
-      <MusicPlayer isOpened={opened} />
 
-      <motion.main
-        initial={{ opacity: 0, scale: 1.03 }}
-        animate={opened ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.03 }}
-        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-background mx-auto w-full max-w-[520px] overflow-hidden"
-      >
+      <main className="bg-emerald-deep mx-auto w-full max-w-[520px] overflow-hidden">
         <Hero />
         <Couple />
         <Countdown />
         <EventDetails />
         <Footer />
-      </motion.main>
-    </>
+      </main>
+    </div>
   );
 }

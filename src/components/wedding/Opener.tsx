@@ -8,20 +8,27 @@ import { wedding } from "./data";
  * Full-screen "seal + curtain" opener. Tapping the wax seal splits the
  * gold curtains and reveals the invitation.
  */
-export function Opener({ onOpen }: { onOpen: () => void }) {
+export function Opener({
+  onOpenStart,
+  onOpen,
+}: {
+  onOpenStart?: () => void;
+  onOpen: () => void;
+}) {
   const [opening, setOpening] = useState(false);
 
   const open = () => {
     if (opening) return;
     setOpening(true);
-    window.setTimeout(onOpen, 1500);
+    onOpenStart?.();
+    window.setTimeout(onOpen, 900);
   };
 
   return (
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
     >
       {[-1, 1].map((dir) => (
         <motion.div
@@ -29,7 +36,7 @@ export function Opener({ onOpen }: { onOpen: () => void }) {
           className="bg-emerald-ink absolute inset-y-0 w-[51%] overflow-hidden"
           style={{ [dir === -1 ? "left" : "right"]: 0 }}
           animate={opening ? { x: `${dir * 105}%` } : { x: 0 }}
-          transition={{ duration: 1.3, ease: [0.76, 0, 0.24, 1] }}
+          transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
         >
           <Aurora intensity={0.55} />
           <div
