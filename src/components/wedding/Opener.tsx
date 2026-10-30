@@ -64,12 +64,18 @@ export function Opener({ onOpen }: { onOpen: () => void }) {
             <span className="text-gold/80 text-[0.55rem] tracking-[0.5em] uppercase">
               A wedding invitation
             </span>
-            <h1 className="text-gold-foil font-display mt-5 text-4xl sm:text-5xl leading-none font-medium tracking-wide">
-              {wedding.groom.name}
-              <span className="font-script text-gold/90 mx-3 text-3xl">&amp;</span>
-              {wedding.bride.name}
+            <h1 className="font-display mt-5 flex items-center justify-center flex-wrap text-4xl sm:text-5xl font-medium tracking-wide">
+              <span className="text-gold-foil inline-block px-2 pt-1 pb-3 leading-[1.2] drop-shadow-[0_2px_12px_rgba(212,175,55,0.25)]">
+                {wedding.groom.name}
+              </span>
+              <span className="font-script text-gold/90 mx-2.5 text-3xl sm:text-4xl">
+                &amp;
+              </span>
+              <span className="text-gold-foil inline-block px-2 pt-1 pb-3 leading-[1.2] drop-shadow-[0_2px_12px_rgba(212,175,55,0.25)]">
+                {wedding.bride.name}
+              </span>
             </h1>
-            <span className="rule-gold mt-6 w-32" />
+            <span className="rule-gold mt-4 w-32" />
 
             <motion.button
               onClick={open}

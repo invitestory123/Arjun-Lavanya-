@@ -14,6 +14,7 @@ export function Hero() {
   const smooth = useSpring(scrollYProgress, { stiffness: 100, damping: 24, mass: 0.4 });
 
   const glowY = useTransform(smooth, [0, 1], ["0%", "22%"]);
+  const garlandY = useTransform(smooth, [0, 1], ["0%", "28%"]);
   const textY = useTransform(smooth, [0, 1], ["0%", "45%"]);
   const textOpacity = useTransform(smooth, [0, 0.65], [1, 0]);
   const coupleY = useTransform(smooth, [0, 1], ["0%", "-8%"]);
@@ -38,7 +39,16 @@ export function Hero() {
 
       <Petals count={12} />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col items-center px-4 pt-16 text-center sm:pt-20">
+      {/* Traditional Marigold Festoon & Orange Strands (without white decoration) */}
+      <motion.img
+        src="/images/garland.png"
+        alt=""
+        aria-hidden
+        style={{ y: garlandY }}
+        className="pointer-events-none absolute -top-1 left-1/2 w-[130%] max-w-none -translate-x-1/2 opacity-95 drop-shadow-md z-10"
+      />
+
+      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col items-center px-4 pt-24 text-center sm:pt-28">
         <motion.div
           style={{ y: textY, opacity: textOpacity }}
           className="flex flex-col items-center"
@@ -57,13 +67,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ delay: 0.35, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 flex flex-col items-center leading-[0.88]"
+            className="mt-4 flex flex-col items-center"
           >
-            <span className="text-gold-foil font-display text-[4rem] sm:text-[4.5rem] font-medium tracking-wide drop-shadow-[0_2px_14px_rgba(212,175,55,0.3)]">
+            <span className="text-gold-foil font-display inline-block px-3 pt-1 pb-4 text-[4rem] sm:text-[4.5rem] font-medium tracking-wide leading-[1.1] sm:leading-[1.15] drop-shadow-[0_2px_14px_rgba(212,175,55,0.3)]">
               {wedding.groom.name}
             </span>
-            <span className="font-script text-gold/90 my-1 text-3xl sm:text-4xl">&amp;</span>
-            <span className="text-gold-foil font-display text-[4rem] sm:text-[4.5rem] font-medium tracking-wide drop-shadow-[0_2px_14px_rgba(212,175,55,0.3)]">
+            <span className="font-script text-gold/90 -my-3 text-3xl sm:text-4xl">&amp;</span>
+            <span className="text-gold-foil font-display inline-block px-3 pt-1 pb-4 text-[4rem] sm:text-[4.5rem] font-medium tracking-wide leading-[1.1] sm:leading-[1.15] drop-shadow-[0_2px_14px_rgba(212,175,55,0.3)]">
               {wedding.bride.name}
             </span>
           </motion.h1>
@@ -72,7 +82,7 @@ export function Hero() {
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ delay: 0.9, duration: 0.8 }}
-            className="rule-gold mt-6 w-36"
+            className="rule-gold mt-4 w-36"
           />
 
           <motion.p

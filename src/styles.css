@@ -122,6 +122,8 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 @utility rule-gold {

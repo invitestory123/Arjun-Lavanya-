@@ -64,7 +64,10 @@ export function Countdown() {
         <Reveal>
           <Ornament label="Counting down" />
           <h2 className="text-ivory mt-5 text-4xl font-light">
-            Until we say <span className="font-script text-gold-foil">forever</span>
+            Until we say{" "}
+            <span className="font-script text-gold-foil inline-block px-1.5 pb-1">
+              forever
+            </span>
           </h2>
         </Reveal>
 
