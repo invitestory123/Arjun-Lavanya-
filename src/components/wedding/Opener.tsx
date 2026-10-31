@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Aurora } from "@/components/Aurora";
 import { Petals } from "./Petals";
 import { wedding } from "./data";
+import { weddingAudio } from "@/lib/weddingAudio";
 
 /**
  * Full-screen "seal + curtain" opener. Tapping the wax seal splits the
@@ -20,6 +21,7 @@ export function Opener({
   const open = () => {
     if (opening) return;
     setOpening(true);
+    weddingAudio.start();
     onOpenStart?.();
     window.setTimeout(onOpen, 900);
   };
