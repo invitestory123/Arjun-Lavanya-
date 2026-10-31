@@ -24,11 +24,11 @@ export const wedding = {
   audioSrc: "/audio/music.mp4",
 
   // Primary wedding date (13 November 2026) for countdown
-  dateISO: "2026-11-13T10:00:00+05:30",
+  dateISO: "2026-11-13T10:05:00+05:30",
   endISO: "2026-11-13T14:00:00+05:30",
   dateLabel: "Friday, 13 November 2026",
-  timeLabel: "Morning onwards",
-  muhurthamLabel: "Sumuhurtham",
+  timeLabel: "10:05 AM onwards",
+  muhurthamLabel: "Sumuhurtham: 10:05 AM",
   venue: {
     name: "Shri Laxmi Ranganatha Kalyana Mantapa",
     address: "Devadurga Tq, Raichur Dist, Karnataka",
@@ -44,9 +44,9 @@ export const wedding = {
       day: "13",
       monthYear: "November 2026",
       dateLabel: "Friday, 13 November 2026",
-      timeLabel: "Morning onwards",
-      muhurthamLabel: "Sumuhurtham",
-      dateISO: "2026-11-13T10:00:00+05:30",
+      timeLabel: "10:05 AM onwards",
+      muhurthamLabel: "Sumuhurtham: 10:05 AM",
+      dateISO: "2026-11-13T10:05:00+05:30",
       endISO: "2026-11-13T14:00:00+05:30",
       venue: {
         name: "Shri Laxmi Ranganatha Kalyana Mantapa",
