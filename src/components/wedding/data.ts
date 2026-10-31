@@ -21,7 +21,7 @@ export const wedding = {
   },
   coverImage: "/images/cover-photo.jpg",
   endImage: "/images/end-photo.jpg",
-  audioSrc: "/audio/song.mp3",
+  audioSrc: "/audio/music.mp4",
 
   // Primary wedding date (13 November 2026) for countdown
   dateISO: "2026-11-13T10:00:00+05:30",

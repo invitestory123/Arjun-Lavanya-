@@ -39,7 +39,9 @@ export function MusicPlayer({ isOpened }: { isOpened: boolean }) {
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       >
-        <source src={wedding.audioSrc} type="audio/mpeg" />
+        <source src={wedding.audioSrc} type="audio/mp4" />
+        <source src={wedding.audioSrc} type="video/mp4" />
+        <source src="/audio/song.mp3" type="audio/mpeg" />
         <source src="/audio/song.m4a" type="audio/mp4" />
       </audio>
 
