@@ -28,7 +28,7 @@ export const wedding = {
   endISO: "2026-11-13T14:00:00+05:30",
   dateLabel: "Friday, 13 November 2026",
   timeLabel: "10:05 AM onwards",
-  muhurthamLabel: "Sumuhurtham: 10:05 AM",
+  muhurthamLabel: "Sumuhurtham",
   venue: {
     name: "Shri Laxmi Ranganatha Kalyana Mantapa",
     address: "Devadurga Tq, Raichur Dist, Karnataka",
@@ -45,7 +45,7 @@ export const wedding = {
       monthYear: "November 2026",
       dateLabel: "Friday, 13 November 2026",
       timeLabel: "10:05 AM onwards",
-      muhurthamLabel: "Sumuhurtham: 10:05 AM",
+      muhurthamLabel: "Sumuhurtham",
       dateISO: "2026-11-13T10:05:00+05:30",
       endISO: "2026-11-13T14:00:00+05:30",
       venue: {
@@ -57,7 +57,7 @@ export const wedding = {
     {
       id: "reception",
       title: "Reception",
-      kannadaTitle: "ಸ್ವಾಗತ ಸಮಾರಂಭ",
+      kannadaTitle: "ಆರತಕ್ಷತೆ",
       subtitle: "Celebrations & Blessings",
       day: "16",
       monthYear: "November 2026",
