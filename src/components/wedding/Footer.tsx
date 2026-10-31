@@ -71,7 +71,7 @@ export function Footer() {
               {wedding.bride.name}
             </p>
             <p className="text-ivory/50 mt-2 text-[0.6rem] tracking-[0.4em] uppercase">
-              13 · 11 · 2026 · Raichur
+              13 · 11 · 2026
             </p>
           </div>
         </Reveal>

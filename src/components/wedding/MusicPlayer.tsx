@@ -7,9 +7,17 @@ export function MusicPlayer({ isOpened }: { isOpened: boolean }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  // Ensure loop is set explicitly on the audio element
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.loop = true;
+    }
+  }, []);
+
   // When user opens the invitation, attempt autoplay
   useEffect(() => {
     if (isOpened && audioRef.current) {
+      audioRef.current.loop = true;
       audioRef.current.play().then(() => {
         setIsPlaying(true);
       }).catch((err) => {
@@ -17,6 +25,18 @@ export function MusicPlayer({ isOpened }: { isOpened: boolean }) {
       });
     }
   }, [isOpened]);
+
+  // Loop fallback if mobile browser fires ended instead of looping
+  const handleEnded = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch((err) => {
+        console.warn("Loop playback restart:", err);
+      });
+    }
+  };
 
   const toggleMusic = () => {
     if (!audioRef.current) return;
@@ -35,14 +55,16 @@ export function MusicPlayer({ isOpened }: { isOpened: boolean }) {
       <audio
         ref={audioRef}
         loop
+        playsInline
         preload="auto"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
+        onEnded={handleEnded}
       >
-        <source src={wedding.audioSrc} type="audio/mp4" />
-        <source src={wedding.audioSrc} type="video/mp4" />
         <source src="/audio/song.mp3" type="audio/mpeg" />
         <source src="/audio/song.m4a" type="audio/mp4" />
+        <source src={wedding.audioSrc} type="audio/mp4" />
+        <source src={wedding.audioSrc} type="video/mp4" />
       </audio>
 
       <AnimatePresence>
