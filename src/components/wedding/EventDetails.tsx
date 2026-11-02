@@ -53,9 +53,11 @@ export function EventDetails() {
                   <p className="text-ivory/90 text-xs tracking-[0.35em] uppercase font-medium mt-1">
                     {evt.monthYear}
                   </p>
-                  <p className="text-gold/80 mt-1 text-[0.7rem] tracking-[0.25em] uppercase">
-                    {evt.dateLabel}
-                  </p>
+                  {evt.dateLabel ? (
+                    <p className="text-gold/80 mt-1 text-[0.7rem] tracking-[0.25em] uppercase">
+                      {evt.dateLabel}
+                    </p>
+                  ) : null}
                 </div>
 
                 {/* Sacred Invitation Body (pure invitation card styling, no link buttons) */}

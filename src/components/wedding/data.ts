@@ -43,7 +43,7 @@ export const wedding = {
       subtitle: "The Sacred Muhurtham & Vows",
       day: "13",
       monthYear: "November 2026",
-      dateLabel: "Friday, 13 November 2026",
+      dateLabel: "",
       timeLabel: "10:05 AM onwards",
       muhurthamLabel: "Sumuhurtham",
       dateISO: "2026-11-13T10:05:00+05:30",
